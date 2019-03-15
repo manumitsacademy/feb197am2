@@ -1,0 +1,44 @@
+<button (click)="flag='list'">List</button>
+<button (click)="flag='table'">table</button>
+<button (click)="flag='headers'">headers</button>
+<button (click)="flag='italics'">italics</button>
+
+<span [ngSwitch]="flag">
+    <ng-template [ngSwitchCase]="'list'">
+      <ul>
+        <li *ngFor="let student of students">{{student}}</li>
+      </ul>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'table'">
+      <table border="2">
+        <tr *ngFor="let student of students">
+          <td>{{student}}</td>
+        </tr>
+      </table>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'headers'">      
+        <h1 *ngFor="let student of students">{{student}}</h1>      
+    </ng-template>
+    <ng-template [ngSwitchCase]="'italics'">      
+        <i *ngFor="let student of students">{{student}}</i>          
+    </ng-template>
+    <ng-template ngSwitchDefault>      
+        <b>Please Click on the above options</b>     
+    </ng-template>
+</span>
+<!--
+<button (click)="flag='list'">List</button>
+<button (click)="flag='table'">table</button>
+<span *ngIf="flag==='list' then listtemplate;else tabletemplate"></span>
+<ng-template #listtemplate>
+  <ul>
+    <li *ngFor="let student of students">{{student}}</li>
+  </ul>
+</ng-template>
+<ng-template #tabletemplate>
+  <table border="2">
+    <tr *ngFor="let student of students">
+      <td>{{student}}</td>
+    </tr>
+  </table>
+</ng-template>-->
