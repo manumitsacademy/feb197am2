@@ -1,3 +1,11 @@
 <h1>This is Home Component</h1>
 <a routerLink="/contactus">goto contact page</a>
 <button (click)="abc()">Chalo careers</button>
+<button (click)="loadSubjects()">Load Subjects</button>
+<button (click)="loadSubjectsUsingHttpModule()">loadSubjectsUsingHttpModule</button>
+<table>
+    <tr *ngFor="let subject of subjectList_Manumits">
+        <td>{{subject.subjectname}}</td>
+        <td>{{subject.subjectcost}}</td>
+    </tr>
+</table>
